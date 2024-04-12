@@ -1,4 +1,3 @@
-
 public class Student {
     //class variables
     private String studentName;
@@ -7,20 +6,13 @@ public class Student {
     private String password;
 
     //constructor
-    /**
-     * @param name represents the name of the student
-     * @param ID represents id of student
-     * @param course represents the course student is enrolled in
-     * @param password represents password of student
-     */
-    public Student(String name, int ID, String course, String password){
+    public Student(String name, int ID, String course){
         this.studentName = name;
         this.studentID = ID;
         this.course = course;
         this.password= password;
-    }
+    } 
         
-        //updated code to add password which students can use to login to code.
       
      //class methods
     public String getStudentName(){
@@ -47,4 +39,3 @@ public class Student {
     this.password = password; 
     }
 }  
-
