@@ -32,10 +32,14 @@ public class Student {
     } 
     
     public String getPassword(){
-        return course; 
+        return password; 
     }
 
-    public void setStudent(String studentName){
+    public String getcourse(){
+        return course;
+    }
+
+    public void setStudentName(String studentName){
      this.studentName = studentName; 
     } 
     
@@ -43,8 +47,12 @@ public class Student {
     this.studentID = studentID; 
     }
     
-	public void setPassword(String course){
+	public void setPassword(String password){
     this.password = password; 
+    }
+
+    public void setCourse(String course){
+        this.course=course;
     }
 }  
 
