@@ -7,6 +7,12 @@ public class Student {
     private String password;
 
     //constructor
+    /**
+     * @param name represents the name of the student
+     * @param ID represents id of student
+     * @param course represents the course student is enrolled in
+     * @param password represents password of student
+     */
     public Student(String name, int ID, String course, String password){
         this.studentName = name;
         this.studentID = ID;
