@@ -1,16 +1,17 @@
- public class Student {
+
+public class Student {
     //class variables
     private String studentName;
     private int studentID;
     private String course;
-    private String password;
+    //private String password;
 
     //constructor
     public Student(String name, int ID, String course){
         this.studentName = name;
         this.studentID = ID;
         this.course = course;
-        this.password= password; 
+        //this.password= password; 
         
         //updated code to add password which students can use to login to code.
       
@@ -39,3 +40,4 @@
     this.password = password; 
     }
 }  
+
