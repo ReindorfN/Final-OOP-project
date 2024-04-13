@@ -7,5 +7,11 @@ public class Test{
         System.out.println(student1.getPassword());
         System.out.println(student1.getStudentID());
         System.out.println(student1.getcourse());
+        
+
+        Extracurricular ex_car1 = new Extracurricular("Diving", 50, 30);
+        ex_car1.displayEventDetails();
+
+
     }
 }

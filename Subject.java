@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Subject extends Event {
 
     //class specific instance variables
@@ -20,7 +22,7 @@ public class Subject extends Event {
    }
    
    public String getModule(int n){
-           this.modules.get(n);
+        return this.modules.get(n);
    }
 
    public void setModules(ArrayList<String> modules) {  //setter
