@@ -2,11 +2,13 @@ package final_oop_project;
 
 import java.util.Scanner;
 //MAIN PROGRAM
+
+public class Main{
 public static void main(String args[]){
 	
 	//Yet to place program in while loop to save progress
 	WeeklyPlanner ashesiPlanner = new WeeklyPlanner();
-	studentName=WeeklyAppySchedule.getStudentName();
+	studentName = WeeklyAppySchedule.getStudentName();
 			
 	System.out.println("Welcome to your Planner");
     System.out.println("Enter a number to continue");
@@ -27,8 +29,6 @@ public static void main(String args[]){
 		    System.out.println("ADD AN EVENT");
 			System.out.println("What type of event are you adding?");
 
-  
-	      
 	    case 3:
 		    System.out.println("RESCHEDULE AN EVENT");
 		    System.out.println("What type of event are you adding?");
@@ -42,3 +42,4 @@ public static void main(String args[]){
       }	  
 	
 	}
+}
