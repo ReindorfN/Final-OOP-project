@@ -1,3 +1,5 @@
+package final_oop_project;
+
 import java.util.*;
 
 public class Subject extends Event {

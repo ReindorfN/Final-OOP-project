@@ -1,3 +1,5 @@
+package final_oop_project;
+
 public class Student {
     //class variables
     private String studentName;
