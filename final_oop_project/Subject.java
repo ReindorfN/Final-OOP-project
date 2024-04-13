@@ -16,7 +16,7 @@ public class Subject extends Event {
    }
 
    public Subject(String subjectName, String time){
-    super(subjectName, time);
+       super(subjectName, time);
    }
 
    public ArrayList<String> getModules() { //getter 

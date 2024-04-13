@@ -2,7 +2,6 @@ package final_oop_project;
 
 //created an abstract class claled event that will be implemented in our Subject, 
 //ExtraCurricular and Groupsession concrete classes 
-import java.util.ArrayList; 
 
 public abstract class Event {
 
