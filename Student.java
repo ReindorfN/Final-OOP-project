@@ -24,7 +24,7 @@ public class Student {
     } 
     
     public String getPassword(){
-        return course; 
+        return password; 
     }
 
     public void setStudent(String studentName){
