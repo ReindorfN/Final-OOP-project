@@ -21,32 +21,7 @@ public class DailyPlanner{
         }
     }
 
-    //public void getDailyTimetable(){}
 
-    public boolean setEventInDailyTimeable(int slot, Event event){
-        if (dailyTimetable[slot] != null){
-            dailyTimetable[slot] = event;
-            return true;
-        }else return false;
-    }
-
-    public boolean setEventInDailyTimeable(int slot, String slotName, String slotTime){
-        if (dailyTimetable[slot] != null){
-            dailyTimetable[slot] = new Event(slotName, slotTime);
-            return true;
-        }else return false;
-    }
-
-
-    public boolean removeEventInDailyTimeable(int slot){
-        for (int i = 0; i < timeSlots.length; i++){
-            if (i == slot && dailyTimetable[i] != null){
-                dailyTimetable[i] = null;
-              return true;
-            }
-          }
-          return false;
-    }
 /* 
     public boolean addSubject(String subjectName, String time, int timeSlot){
         if (dailyTimetable[slot] != null){
@@ -110,7 +85,7 @@ public class DailyPlanner{
     /**
      * @param groupSession represents a group session object.
      * @param slot represents a slot where the group session should be added.
-     * @return determines adding a group session was successful or not.
+     * @return determines whether adding a group session was successful or not.
      */
     public boolean addGroupSession(GroupSession groupSession, int slot){
         if (dailyTimetable[slot] != null){
@@ -121,7 +96,7 @@ public class DailyPlanner{
     
 
     /**
-     * @param groupSession represents an already created groupsession object.
+     * @param groupSession represents an already created group session object.
      * @param slot represents the slot where the activity should be rescheduled to.
      * @return determines whether the rescheduling was successful or not. 
      */
@@ -139,7 +114,7 @@ public class DailyPlanner{
     }
 
     /**
-     * @param slot represents the slot where the group session whould be removed
+     * @param slot represents the slot where the group session would be removed
      * @return determines whether the group session was removed or not. 
      */
     public boolean removeGroupSession(int slot){
