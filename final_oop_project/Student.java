@@ -26,18 +26,21 @@ public class Student {
     }
         
         //updated code to add password which students can use to login to code.
-    public boolean checkPassword(string password){
-        if passwordInput.equals(password){
+public boolean checkPassword(String password){
+    try {
+        if (passwordInput.equals(password)) {
             return true;
-        }else{
-	    return false;
-            System.out.println ("Try Again. Incorrect password");
+        } else {
+            return false;
         }
+    } catch (NullPointerException e) {
+        System.out.println("Try Again. Incorrect password");
     }
-      
+}
+
      //class methods
     public void displayWeeklyTimetable() {
-	    try {
+	    try{
             System.out.println("Schedule for the week:");
             for (int i = 0; i < days.length; i++) {
                 System.out.println("Schedule for " + days[i] + ":");
