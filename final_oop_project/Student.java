@@ -26,17 +26,17 @@ public class Student {
     }
         
         //updated code to add password which students can use to login to code.
-public boolean checkPassword(String password){
-    try {
-        if (passwordInput.equals(password)) {
-            return true;
-        } else {
-            return false;
-        }
-    } catch (NullPointerException e) {
-        System.out.println("Try Again. Incorrect password");
-    }
-}
+	public boolean checkPassword(String password){
+    		try {
+        		if (passwordInput.equals(password)) {
+            			return true;
+        		} else {
+           	 		return false;
+       			}
+    		} catch (NullPointerException e) {
+       			 System.out.println("Try Again. Incorrect password");
+    		}
+	}
 
      //class methods
     public void displayWeeklyTimetable() {
@@ -50,3 +50,7 @@ public boolean checkPassword(String password){
             System.out.println("The array index is out of bounds");
         }
     }
+
+public String getStudentName(){
+	return studentName;
+}
