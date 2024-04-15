@@ -7,9 +7,9 @@ public class Main{
 public static void main(String args[]){
 	
 	//Yet to place program in while loop to save progress
-	WeeklyPlanner ashesiPlanner = new WeeklyPlanner();
-	studentName = WeeklyAppySchedule.getStudentName();
-			
+	DailyPlanner ashesiPlanner = new DailyPlanner();
+	//studentName = WeeklyAppySchedule.getStudentName();
+	
 	System.out.println("Welcome to your Planner");
     System.out.println("Enter a number to continue");
     System.out.println("1) View your planner for the week");
@@ -23,23 +23,29 @@ public static void main(String args[]){
     //Switch Loop to run menu selcetion
     switch(menu){
 	    case 1:
-		    ashesiPlanner.displayWeeklyPlanner();
+		    ashesiPlanner.displayTimetable();
+			break;
 	      
 	    case 2:
 		    System.out.println("ADD AN EVENT");
 			System.out.println("What type of event are you adding?");
+			break;
 
 	    case 3:
 		    System.out.println("RESCHEDULE AN EVENT");
 		    System.out.println("What type of event are you adding?");
+			break;
 	      
 	    case 4:
 	      	System.out.println("CANCEL AN EVENT");
+			break;
 	      
 	    default:
 		    System.out.println("Please select an option that is included in this list");
+			break;
       
       }	  
 	
 	}
 }
+

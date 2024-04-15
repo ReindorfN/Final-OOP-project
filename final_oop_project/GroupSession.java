@@ -4,7 +4,7 @@ public class GroupSession extends Event {
     //class specific instance variables
     private String purpose;
 
-    public GroupSession(String GroupSessionName, double time, String purpose) {
+    public GroupSession(String GroupSessionName, String time, String purpose) {
         super(GroupSessionName, time); //reference to the superclass' constructor 
         this.purpose = purpose;
         

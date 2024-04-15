@@ -5,7 +5,7 @@ public class Extracurricular extends Event {
     //class specific instance variables
     private double timeSpent;
 
-    public Extracurricular(String extraCurricular, double time, double timeSpent) {
+    public Extracurricular(String extraCurricular, String time, double timeSpent) {
         super(extraCurricular, time); //reference to superclass constructor 
         this.timeSpent = timeSpent;
     }

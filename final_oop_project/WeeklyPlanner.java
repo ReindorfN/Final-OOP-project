@@ -6,7 +6,7 @@ public class WeeklyPlanner {
 
     public WeeklyPlanner() {
         for (int i = 0; i < weeklyTimetable.length; i++) {
-            weeklyTimetable[i] = new DailySchedule(days[i]);
+            weeklyTimetable[i] = new DailyPlanner();
         }
     }
 
@@ -15,9 +15,10 @@ public class WeeklyPlanner {
             System.out.println("Schedule for the week:");
             for (int i = 0; i < days.length; i++) {
                 System.out.println("Schedule for " + days[i] + ":");
-                weeklyTimetable[i].displayDailyAppointments(); 
+                weeklyTimetable[i].displayDailyAppointments(); // There's no method displaydailyappointments
             }
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("The array index is out of bounds");
         }
     }
+}

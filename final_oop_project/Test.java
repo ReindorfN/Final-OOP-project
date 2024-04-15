@@ -11,7 +11,7 @@ public class Test{
         System.out.println(student1.getcourse());
         
 
-        Extracurricular ex_car1 = new Extracurricular("Diving", 50, 30);
+        Extracurricular ex_car1 = new Extracurricular("Diving", "5:00pm", 30);
         ex_car1.displayEventDetails();
 
 
