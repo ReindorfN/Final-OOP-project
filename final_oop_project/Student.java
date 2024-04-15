@@ -28,8 +28,9 @@ public class Student {
         //updated code to add password which students can use to login to code.
     public boolean checkPassword(string password){
         if passwordInput.equals(password){
-            //runs method that opens menu for planner
+            return true;
         }else{
+	    return false;
             System.out.println ("Try Again. Incorrect password");
         }
     }
