@@ -6,6 +6,8 @@ public class Student {
     private int studentID;
     private String course;
     private String password;
+    private String[] days = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+    private DailyPlanner[] weeklyTimetable = new DailyPlanner[7]; 
 
     //constructor
     /**
@@ -13,14 +15,17 @@ public class Student {
      * @param ID represents id of student
      * @param course represents the course student is enrolled in
      * @param password represents password of student
+     * @param weeklyTimetable[] is an array which has a list of events for the day
      */
     public Student(String name, int ID, String course, String password){
         this.studentName = name;
         this.studentID = ID;
         this.course = course;
         this.password= password;
+        this.weeklyTimetable=weeklyTimetable[];
     }
         
         //updated code to add password which students can use to login to code.
+    
       
      //class methods
