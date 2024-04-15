@@ -8,7 +8,6 @@ public class DailyPlanner{
     public DailyPlanner(){
         dailyTimetable = new Event[timeSlots.length]; 
     }
-
     //class methods
     public void displayTimetable(){
         System.out.println("Schedule for Today");
@@ -33,10 +32,15 @@ public class DailyPlanner{
     }
 */
     public boolean addSubject(Subject subject, int timeSlot){
-        if (dailyTimetable[timeSlot] != null){
+        try{
+            if (dailyTimetable[timeSlot] != null){
             dailyTimetable[timeSlot] = subject;
             return true;
-        }else return false; 
+        }else return false;    
+        } catch (NullPointerException e){
+            System.out.println("Unexpected error: One or more required objects are null."); 
+            return false; 
+        }
     }
 /* 
     public boolean rescheduleSubject(String subjectName, String time, int slot){
@@ -54,33 +58,43 @@ public class DailyPlanner{
     }
 */
 
-    public boolean rescheduleSubject(Subject subject, int slot){
-        for (int i = 0; i < timeSlots.length; i++){
-            if (dailyTimetable[i] == subject){
-                dailyTimetable[i] = null;
-            }
-            if (i == slot && dailyTimetable[i] == null){
-                dailyTimetable[i] = subject;
-              return true;
-            }
+public boolean rescheduleSubject(Subject subject, int slot){
+  try {
+      for (int i = 0; i < timeSlots.length; i++) {
+          if (dailyTimetable[i] == subject) {
+              dailyTimetable[i] = null;  
           }
-          return false;
-    }
+          if (i == slot && dailyTimetable[i] == null) {
+              dailyTimetable[i] = subject; 
+              return true;  
+          }
+      }
+      return false; 
+  } 
+  catch (ArrayIndexOutOfBoundsException e) {
+      System.out.println("Slot not available. Try again");
+      return false;  
+  }
+}
 
     /**
      * @param slot represents the timeslot where the 
      * @return
      */
-    public boolean removeSubject(int slot){
-        for (int i = 0; i < timeSlots.length; i++){
-            if (i == slot && dailyTimetable[i] != null){
-                dailyTimetable[i] = null;
-              return true;
+public boolean removeSubject(int slot){
+    try {
+        for (int i = 0; i < timeSlots.length; i++) {
+            if (i == slot && dailyTimetable[i] != null) {
+                dailyTimetable[i] = null; 
+                return true; 
             }
-          }
-          return false;
+        }
+        return false; 
+    } catch (ArrayIndexOutOfBoundsException e) {
+        System.out.println("Slot not found");
+        return false; 
     }
-
+}
 
     /**
      * @param groupSession represents a group session object.
@@ -88,10 +102,15 @@ public class DailyPlanner{
      * @return determines whether adding a group session was successful or not.
      */
     public boolean addGroupSession(GroupSession groupSession, int slot){
-        if (dailyTimetable[slot] != null){
+        try{
+            if (dailyTimetable[slot] == null){
             dailyTimetable[slot] = groupSession;
             return true;
         }else return false;
+        } catch (NullPointerException e){
+            System.out.println("Unexpected error: One or more required objects are null."); 
+            return false; 
+        }
     }
     
 
@@ -101,7 +120,8 @@ public class DailyPlanner{
      * @return determines whether the rescheduling was successful or not. 
      */
     public boolean rescheduleGroupSession(GroupSession groupSession, int slot){
-        for (int i = 0; i < timeSlots.length; i++){
+        try{
+           for (int i = 0; i < timeSlots.length; i++){
             if (dailyTimetable[i] == groupSession){
                 dailyTimetable[i] = null;
             }
@@ -110,7 +130,11 @@ public class DailyPlanner{
               return true;
             }
           }
-          return false;
+          return false; 
+        } catch (ArrayIndexOutOfBoundsException e){
+            System.out.println("Slot not found"); 
+            return false; 
+        }
     }
 
     /**
@@ -118,15 +142,20 @@ public class DailyPlanner{
      * @return determines whether the group session was removed or not. 
      */
     public boolean removeGroupSession(int slot){
-        for (int i = 0; i < timeSlots.length; i++){
+        try{
+            for (int i = 0; i < timeSlots.length; i++){
             if (i == slot && dailyTimetable[i] != null){
                 dailyTimetable[i] = null;
               return true;
             }
           }
           return false;
+        }
+        catch (ArrayIndexOutOfBoundsException e){
+            System.out.println("Slot not found"); 
+            return false; 
+        }
     }
-    
  
     /**
      * @param extracurricular represents an extra curricular activity
@@ -134,20 +163,27 @@ public class DailyPlanner{
      * @return determined whether the activity was added or not. 
      */
     public boolean addExtracurricular(Extracurricular extracurricular, int slot){
-        if (dailyTimetable[slot] != null){
+        try{
+            if (dailyTimetable[slot] == null){
             dailyTimetable[slot] = extracurricular;
             return true;
-        }else return false;
+        }
+            else return false;
+        } catch (ArrayIndexOutOfBoundsException e){
+            System.out.println("Slot not available. Try again");
+      return false; 
+            }
+        }
     }
     
-
     /**
-     * @param extracurricular represents an extra-curricular activity. A types already created. 
-     * @param slot represents the slot where the activity should be rescheduled to.
-     * @return represents whether the rescheduling was successfull or not. 
+     * @param extracurricular represents an extra-curricular activity. Types already created. 
+     * @param slot represents the slot where the activity should be rescheduled.
+     * @return represents whether the rescheduling was successful or not. 
      */
     public boolean rescheduleExtracurricular(Extracurricular extracurricular, int slot){
-        for (int i = 0; i < timeSlots.length; i++){
+        try{
+            for (int i = 0; i < timeSlots.length; i++){
             if (dailyTimetable[i] == extracurricular){
                 dailyTimetable[i] = null;
             }
@@ -157,20 +193,29 @@ public class DailyPlanner{
             }
           }
           return false;
+        } catch (ArrayIndexOutOfBoundsException e){
+            System.out.println("Slot not available. Try again");
+      return false; 
+        }
     }
 
-
     /**
-     * @param slot represents the timeslot which hlds the desired extracurricular activity
-     * @return returns a boolean depending on wheter the extracurricular removal ws successful or not. 
+     * @param slot represents the timeslot which holds the desired extracurricular activity
+     * @return returns a boolean depending on whether the extracurricular removal was successful. 
      */
     public boolean removeExtracurricular(int slot){
-        for (int i = 0; i < timeSlots.length; i++){
+        try{
+            for (int i = 0; i < timeSlots.length; i++){
             if (i == slot && dailyTimetable[i] != null){
                 dailyTimetable[i] = null;
                 return true;
             }
           }
         return false;
+        } catch (ArrayIndexOutOfBoundsException e){
+            System.out.println("Slot not available. Try again");
+          return false; 
+        }
+        
     }
 }
