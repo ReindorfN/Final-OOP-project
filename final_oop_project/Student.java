@@ -24,35 +24,3 @@ public class Student {
         //updated code to add password which students can use to login to code.
       
      //class methods
-    public String getStudentName(){
-        return studentName; 
-    }
-
-    public int getStudentID(){
-        return studentID; 
-    } 
-    
-    public String getPassword(){
-        return password; 
-    }
-
-    public String getcourse(){
-        return course;
-    }
-
-    public void setStudentName(String studentName){
-     this.studentName = studentName; 
-    } 
-    
-	public void setStudentID(int studentID){
-    this.studentID = studentID; 
-    }
-    
-	public void setPassword(String password){
-    this.password = password; 
-    }
-
-    public void setCourse(String course){
-        this.course=course;
-    }
-}  
