@@ -8,6 +8,7 @@ public class Main{
 		if(passwordChecker()){
 			while(true){
 				DailyPlanner ashesiPlanner = new DailyPlanner();
+				studentName=.getStudentName
 	
 				System.out.println("Welcome"+studentName+"to your Planner");
  			  	System.out.println("Enter a number to continue");
