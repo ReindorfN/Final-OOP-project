@@ -7,9 +7,9 @@ public abstract class Event {
 
     //made these protected so that the other classes in the package can use them
     protected String eventName;
-    protected double eventTime; // Will probably have to use the time class for this 
+    protected String eventTime; // Will probably have to use the time class for this 
 
-    public Event(String eventName, double eventTime) {
+    public Event(String eventName, String eventTime) {
         this.eventName = eventName;
         this.eventTime = eventTime;
     }

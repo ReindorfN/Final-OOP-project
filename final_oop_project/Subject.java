@@ -5,7 +5,7 @@ import java.util.*;
 public class Subject extends Event {
 
     //class specific instance variables
-    private int numModules;
+    //private int numModules;
    private ArrayList<String> modules = new ArrayList<String>(); 
    private double progress;
 
