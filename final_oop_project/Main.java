@@ -5,6 +5,9 @@ import java.util.Scanner;
 
 public class Main{
 public static void main(String args[]){
+
+	
+	passwordChecker(); //Login for user
 	
 	//Yet to place program in while loop to save progress
 	DailyPlanner ashesiPlanner = new DailyPlanner();
