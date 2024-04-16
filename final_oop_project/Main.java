@@ -1,6 +1,7 @@
 package final_oop_project;
 
 import java.util.Scanner;
+
 //MAIN PROGRAM
 
 public class Main{
