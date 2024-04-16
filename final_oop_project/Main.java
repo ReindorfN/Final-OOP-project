@@ -1,5 +1,6 @@
 package final_oop_project;
 
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 //import java.io.*;
 
@@ -9,6 +10,8 @@ public class Main {
 
 		//LogIn app1 = new LogIn();
 		//app1.begin();
+		Extracurricular test1 = new Extracurricular("Painting", "5pm", 30);
+		
 
 		Tips t = new Tips();
 		
@@ -25,6 +28,7 @@ public class Main {
 		System.out.print("Enter your password: "); String studentPassword = input.nextLine();
 
 		Student currentStudent = new Student(studentName, studentID, studentCourse, studentPassword);
+		currentStudent.addExtracurricular(4,3, test1);
 
 		try{
 		if ((currentStudent.checkPassword(studentPassword)) == true) {
@@ -292,7 +296,7 @@ public class Main {
 						System.out.println("Please select an option that is included in the menu options ");
 						break;
 				}
-				
+				break;
 			}
 	}
 	else{
@@ -303,6 +307,9 @@ public class Main {
 	}
 	catch(NullPointerException e){
 		System.out.println("Null pointer");
+	}
+	catch(NoSuchElementException e){
+		System.out.println("No such element");
 	}
 	finally{
 		input.close();

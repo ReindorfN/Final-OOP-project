@@ -15,7 +15,12 @@ public class WeeklyPlanner {
             System.out.println("Schedule for the week:");
             for (int i = 0; i < days.length; i++) {
                 System.out.println("Schedule for " + days[i] + ":");
-                weeklyTimetable[i].displayDailyAppointments(); // There's no method displaydailyappointments
+                if (weeklyTimetable[i] != null) {
+                    weeklyTimetable[i].displayTimetable(); // Check if the element is not null before calling the method
+                } else {
+                    System.out.println("No appointments scheduled for " + days[i]);
+                }
+                //weeklyTimetable[i].displayTimetable(); // There's no method displaydailyappointments
             }
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("The array index is out of bounds");

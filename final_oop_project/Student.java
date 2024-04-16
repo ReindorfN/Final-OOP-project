@@ -48,7 +48,7 @@ public class Student {
             System.out.println("Schedule for the week:");
             for (int i = 0; i < days.length; i++) {
                 System.out.println("Schedule for " + days[i] + ":");
-                weeklyTimetable[i].displayDailyAppointments();
+                weeklyTimetable[i].displayTimetable();
             }
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("The array index is out of bounds");
