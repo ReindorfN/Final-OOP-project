@@ -1,5 +1,6 @@
 package final_oop_project;
 
+
 public class GroupSession extends Event {
     // class specific instance variables
     private String purpose;
@@ -7,8 +8,6 @@ public class GroupSession extends Event {
     public GroupSession(String GroupSessionName, String time, String purpose) {
         super(GroupSessionName, time); // reference to the superclass' constructor
         this.purpose = purpose;
-
-        // Maisy: shouldn't the groupSessionName be small g because it is a variable?
     }
 
     public String getPurpose() { // getter

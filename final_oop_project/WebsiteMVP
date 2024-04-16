@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>My Ashesi Planner</title>
+</head>
+
+<style>
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+	
+	body{background-color:#722F37;		
+	}
+
+		
+	h1{ font-family:"Avant Garde", sans-serif;
+      font-size:40px;
+  		text-align:center;
+  		text-transform: uppercase;
+  		color:#722F37;
+  	}
+
+  h2{ font-family: 'Avant Garde', sans-serif;
+  		font-size:20px;
+  		text-align:center;
+  		color:#722F37;
+
+
+  }
+		
+	p{  font-family: 'Muli', sans-serif;
+  		font-style: bold;
+  		text-align:center;
+
+	}
+    
+  .header{ background-color:white;
+ 					 border-radius: 10px;
+  				max-width: 50%;
+  				margin: 10px auto;
+    }
+    
+  .pannel{ background-color:white;
+ 					 border-radius: 10px;
+  				max-width: 70%;
+  				margin: 10px auto;
+  				padding:20px;
+    }
+    
+   .button1{background-color:black ;
+   				color:white;
+  				border: none;
+   }
+
+
+  label{font-family:"Avant Garde", sans-serif;
+  }
+
+</style>
+
+</body>
+	<div class="header">
+		<center><img src="AshesiLogo.png" width=75px height=75px></center>
+  </div> 
+    
+  <div class="pannel">
+		<h1>My Ashesi Planner</h1>
+		<h2>Hello Maame,welcome to your planner</h2>
+    <p>Enter a number to continue:</p>
+		<p>1. View the planner for the week<p>
+		<p>2. Add an event</p>
+		<p>3. Reschedule an event</p>
+		<p>4. Cancel an event</p>
+		<input type="text"/>
+		<label>Type in your option</label>
+		<button class="button1">Clear</button>
+		<button class="button1">Enter</button>
+	</div>
+
+</body>
+
+</html>

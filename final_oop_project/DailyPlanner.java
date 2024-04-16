@@ -238,8 +238,8 @@ public class DailyPlanner {
 
     }
 
-    public void displayDailyAppointments() {
+    public void displayDailyTimetable() {
 
-        throw new UnsupportedOperationException("Unimplemented method 'displayDailyAppointments'");
+        throw new UnsupportedOperationException("Unimplemented method 'displayDailyTimetable'");
     }
 }
