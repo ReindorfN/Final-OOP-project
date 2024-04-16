@@ -1,5 +1,11 @@
 package final_oop_project;
 
+/*
+import java.util.HashMap;
+import java.util.Map;
+*/
+
+
 public class Student {
     // class variables
     private String studentName;
@@ -9,6 +15,16 @@ public class Student {
     private String[] days = { "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY" };
     private DailyPlanner[] weeklyTimetable = new DailyPlanner[7];
 
+    // Change weeklyTimetable to a map of maps (nested map)
+    /*
+    Map<String, Map<String, Object>> weeklyTimetable = new HashMap<>();
+    for (int i = 0; i < days.length; i++) {  // add each day as a key to the map with a corresponding map as the value that will store a subject or extracurricular object
+        weeklyTimetable[days[i]] = new HashMap<>();
+    }
+    
+    */
+
+    
     // constructor
     /**
      * @param name     represents the name of the student
@@ -67,6 +83,14 @@ public class Student {
             return false;
         }
     }
+
+    /*
+    public boolean addSubject(String day, String time, Subject subject) {
+
+    
+    */
+
+    
 
     public boolean rescheduleSubject(int daySlot, int timeSlot, Subject subject) {
         if (weeklyTimetable[daySlot].rescheduleSubject(subject, timeSlot)) {
