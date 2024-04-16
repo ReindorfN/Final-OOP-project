@@ -7,11 +7,17 @@ public class DailyPlanner {
     public Object[] dailyTimetable;
 
     // Creating Daily Planner
+    /**
+     * DailyPlanner constructor
+     */
     public DailyPlanner() {
         dailyTimetable = new Object[timeSlots.length];
     }
 
     // class methods
+    /**
+     * This method displays the daily timetable 
+     */
     public void displayTimetable() {
         System.out.println("Schedule for Today");
         for (int i = 0; i < timeSlots.length; i++) {
@@ -32,6 +38,11 @@ public class DailyPlanner {
      * return false;
      * }
      * }
+     */
+    /**
+     * @param subject represents a subject object
+     * @param timeSlot represents timeslots considered as study hours
+     * @return
      */
     public boolean addSubject(Subject subject, int timeSlot) {
         try {
@@ -57,22 +68,13 @@ public class DailyPlanner {
         return false;
     }
 
-    /*
-     * public boolean rescheduleSubject(String subjectName, String time, int slot){
-     * Subject subject = new Subject(subjectName, time);
-     * for (int i = 0; i < dailyTimetable.length; i++){
-     * if (dailyTimetable[i] == subject){
-     * dailyTimetable[i] = null;
-     * }
-     * if (i == slot && dailyTimetable[i] == null){
-     * dailyTimetable[i] = subject;
-     * return true;
-     * }
-     * }
-     * return false;
-     * }
-     */
 
+    /**
+     * @param subject represents a subject object
+     * @param slot represents the slot the event should be rescheduled to
+     * @return
+     */
+ 
     public boolean rescheduleSubject(Subject subject, int slot) {
         try {
             for (int i = 0; i < timeSlots.length; i++) {
@@ -235,9 +237,12 @@ public class DailyPlanner {
             System.out.println("Slot not available. Try again");
             return false;
         }
-
     }
+    
 
+    /**
+     * Ensures this unimplemented method cannot be called.
+     */
     public void displayDailyTimetable() {
 
         throw new UnsupportedOperationException("Unimplemented method 'displayDailyTimetable'");

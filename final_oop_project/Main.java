@@ -28,7 +28,7 @@ public class Main {
 		System.out.print("Enter your password: "); String studentPassword = input.nextLine();
 
 		Student currentStudent = new Student(studentName, studentID, studentCourse, studentPassword);
-		currentStudent.addExtracurricular(4,3, test1);
+		//currentStudent.addExtracurricular(4,3, test1);
 
 		try{
 		if ((currentStudent.checkPassword(studentPassword)) == true) {
