@@ -1,30 +1,35 @@
 package final_oop_project;
 
 import java.util.Scanner;
+//import java.io.*;
 
 //MAIN PROGRAM
 public class Main {
 	public static void main(String args[]) {
+
+		//LogIn app1 = new LogIn();
+		//app1.begin();
+
 		Tips t = new Tips();
 		
 		Scanner input = new Scanner(System.in);
-		System.out.println("Enter your name:");
-		String studentName = input.nextLine();
 
-		System.out.println("Enter your student ID number:");
-		String studentID = input.nextLine();
+		System.out.println("Welcome to the Ashesi Student Planner.");
+        System.out.println("Let's begin by creating an account.");
+		System.out.print("Enter your name: "); String studentName = input.nextLine();
 
-		System.out.println("Enter the course you are studying:");
-		String studentCourse = input.nextLine();
+		System.out.print("Enter your student ID number: "); String studentID = input.nextLine();
 
-		System.out.println("Enter your password:");
-		String studentPassword = input.nextLine();
+		System.out.print("Enter the course you are studying: "); String studentCourse = input.nextLine();
+
+		System.out.print("Enter your password: "); String studentPassword = input.nextLine();
 
 		Student currentStudent = new Student(studentName, studentID, studentCourse, studentPassword);
 
-		if (currentStudent.checkPassword(studentPassword)) {
+		try{
+		if ((currentStudent.checkPassword(studentPassword)) == true) {
 			while (true) {
-				System.out.println("Welcome" + currentStudent.getStudentName() + "to your Planner");
+				System.out.println("Welcome " + currentStudent.getStudentName() + " to your Planner");
 				System.out.println("Enter a number to continue");
 				System.out.println("1) View your planner for the week");
 				System.out.println("2) Add an event");
@@ -32,6 +37,7 @@ public class Main {
 				System.out.println("4) Cancel an event");
 
 				int menu = input.nextInt();
+				input.nextLine();
 
 				// Switch Loop to run menu selection
 				switch (menu) {
@@ -43,7 +49,7 @@ public class Main {
 						System.out.println("ADD AN EVENT");
 						System.out.println(
 								"What type of event are you adding? SUBJECT, GROUP SESSION or EXTRACURRICULAR(Type in caps)");
-						String event = input.nextLine(); // Changed nextLine() to next()
+						String event = input.nextLine(); //input.nextLine(); // Changed nextLine() to next()
 
 						int index = 0;
 						int index2 = 0;
@@ -61,7 +67,7 @@ public class Main {
 
 							System.out.println("What is your progress?");
 							double progress = input.nextDouble();
-							input.nextLine();
+							//input.nextLine();
 
 							System.out.println("What is the course code?");
 							String courseCode = input.nextLine();
@@ -77,13 +83,14 @@ public class Main {
 
 							Subject currentSubject = new Subject(subjectName, modules, progress, courseCode, lecturer,
 									facultyIntern, location, times); // Removed assignment
+
 							System.out.println(
 									"What day do you want to add your event to from? Enter a number from 0-7 (Sunday(0) - Saturday(7))?");
 							index = input.nextInt();
 							input.nextLine();
 
 							System.out.println(
-									"What time do you want to add your event to from? Enter a number from 0-7 (8am(0) - 10pm(14))?");
+									"What time do you want to add your event to from? Enter a number from 0-14 (8am(0) - 10pm(14))?");
 							index2 = input.nextInt();
 							input.nextLine();
 
@@ -135,7 +142,7 @@ public class Main {
 							input.nextLine();
 
 							System.out.println(
-									"What time do you want to add your event to from? Enter a number from 0-7 (8am(0) - 10pm(14))?");
+									"What time do you want to add your event to from? Enter a number from 0-14 (8am(0) - 10pm(14))?");
 							index2 = input.nextInt();
 							input.nextLine();
 
@@ -285,8 +292,21 @@ public class Main {
 						System.out.println("Please select an option that is included in the menu options ");
 						break;
 				}
-				input.close();
+				
 			}
-		}
 	}
+	else{
+		System.out.println("You cannot be logged In. Incorrect credentials!!");
+	}}
+	catch(IllegalStateException e){
+		System.out.println("Illegal ENTRY");
+	}
+	catch(NullPointerException e){
+		System.out.println("Null pointer");
+	}
+	finally{
+		input.close();
+	}
+
+}
 }

@@ -31,15 +31,16 @@ public class Student {
     // updated code to add password which students can use to login to code.
     public boolean checkPassword(String passwordInput) {
         try {
-            if (passwordInput.equals(password)) {
-                return true;
-            } else {
+            if(this.password == null){
+                System.out.println("Password is not set. Please set a password.");
                 return false;
             }
+            //return passwordInput.equals(this.password);
+
         } catch (NullPointerException e) {
             System.out.println("Try Again. Incorrect password");
-            return false;
         }
+        return passwordInput.equals(this.password);
     }
 
     // class methods
@@ -144,6 +145,10 @@ public class Student {
 
     public String getCourse() {
         return course;
+    }
+
+    public String getpassword(){
+        return password;
     }
 
     public int getTimetableLength() {
