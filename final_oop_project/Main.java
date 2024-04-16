@@ -5,26 +5,28 @@ import java.util.Scanner;
 //MAIN PROGRAM
 
 public class Main{
-	public static void main(String args[]){
-		if(passwordChecker()){
+	public static void main(String args[], String studentName){
+
+		DailyPlanner weeklyPlanner = new DailyPlanner();
+		Student currentStudent= new Student("Maame",54552026,"MIS","abc123",weeklyPlanner);
+		Student name = currentStudent;
+
+		if(currentStudent.passwordChecker()){
 			while(true){
-				DailyPlanner ashesiPlanner = new DailyPlanner();
-				studentName=.getStudentName
-	
-				System.out.println("Welcome"+studentName+"to your Planner");
+				System.out.println("Welcome"+ name + "to your Planner"); 
  			  	System.out.println("Enter a number to continue");
     				System.out.println("1) View your planner for the week");
     				System.out.println("2) Add an event");
    		 		System.out.println("3) Reschedule an event");
     				System.out.println("4) Cancel an event");
 
-    				Scanner input=new Scanner(System.in);
-    				int menu=input.nextInt();
+    				Scanner input = new Scanner(System.in);
+    				int menu = input.nextInt();
       
     				//Switch Loop to run menu selcetion 	
 				switch(menu){
 	    				case 1:
-		    				ashesiPlanner.displayTimetable();
+		    				weeklyPlanner.displayTimetable();
 						break;
 	    				case 2:
 		   				 System.out.println("ADD AN EVENT");
@@ -44,6 +46,7 @@ public class Main{
 		    				System.out.println("Please select an option that is included in this list");
 						break;
       				}	
+					input.close(); 
 			}	
 		}
 	}

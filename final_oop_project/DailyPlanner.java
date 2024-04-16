@@ -3,10 +3,10 @@ package final_oop_project;
 public class DailyPlanner{
     
     public String[] timeSlots={"8am","9am","10am","11am","12pm","1pm","2pm","3pm","4pm","5pm","6pm","7pm","8pm","9pm","10pm"}; //Total study slots
-    public Event[] dailyTimetable;
+    public Object[] dailyTimetable;
     //Creating Daily Planner
     public DailyPlanner(){
-        dailyTimetable = new Event[timeSlots.length]; 
+        dailyTimetable = new Object[timeSlots.length]; 
     }
     //class methods
     public void displayTimetable(){
@@ -20,7 +20,6 @@ public class DailyPlanner{
         }
     }
 
-
 /* 
     public boolean addSubject(String subjectName, String time, int timeSlot){
         if (dailyTimetable[slot] != null){
@@ -31,17 +30,20 @@ public class DailyPlanner{
         }
     }
 */
-    public boolean addSubject(Subject subject, int timeSlot){
-        try{
-            if (dailyTimetable[timeSlot] != null){
+public boolean addSubject(Subject subject, int timeSlot) {
+    try {
+        if (subject != null && dailyTimetable[timeSlot] == null) {
             dailyTimetable[timeSlot] = subject;
             return true;
-        }else return false;    
-        } catch (NullPointerException e){
-            System.out.println("Unexpected error: One or more required objects are null."); 
-            return false; 
+        } else {
+            return false;
         }
+    } catch (NullPointerException e) {
+        System.out.println("Unexpected error: One or more required objects are null.");
+        return false;
     }
+}
+
 /* 
     public boolean rescheduleSubject(String subjectName, String time, int slot){
         Subject subject = new Subject(subjectName, time);
@@ -174,7 +176,7 @@ public boolean removeSubject(int slot){
       return false; 
             }
         }
-    }
+
     
     /**
      * @param extracurricular represents an extra-curricular activity. Types already created. 
@@ -218,4 +220,8 @@ public boolean removeSubject(int slot){
         }
         
     }
+	public void displayDailyAppointments() {
+
+		throw new UnsupportedOperationException("Unimplemented method 'displayDailyAppointments'");
+	}
 }
