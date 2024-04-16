@@ -5,28 +5,33 @@ import java.util.Scanner;
 //MAIN PROGRAM
 public class Main {
 	public static void main(String args[]) {
+		Tips t = new Tips();
+		
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter your name:");
+		String studentName = input.nextLine();
 
-		Student weeklyPlanner = new Student();
-		Student currentStudent = new Student("Maame", "54552026", "MIS", "abc123");
-		//Student name = currentStudent;
-		String cancelEvent; int dayIndex; int eventTime;
-		Scanner input; input = new Scanner(System.in);
+		System.out.println("Enter your student ID number:");
+		String studentID = input.nextLine();
 
-		System.out.println("Enter password: ");
+		System.out.println("Enter the course you are studying:");
+		String studentCourse = input.nextLine();
 
-		try{
-		if (currentStudent.checkPassword(input.nextLine())) {
+		System.out.println("Enter your password:");
+		String studentPassword = input.nextLine();
+
+		Student currentStudent = new Student(studentName, studentID, studentCourse, studentPassword);
+
+		if (currentStudent.checkPassword(studentPassword)) {
 			while (true) {
-				System.out.println("Welcome " + currentStudent.getStudentName() + " to your Planner");
+				System.out.println("Welcome" + currentStudent.getStudentName() + "to your Planner");
 				System.out.println("Enter a number to continue");
 				System.out.println("1) View your planner for the week");
 				System.out.println("2) Add an event");
 				System.out.println("3) Reschedule an event");
 				System.out.println("4) Cancel an event");
 
-				
 				int menu = input.nextInt();
-				input.nextLine();
 
 				// Switch Loop to run menu selection
 				switch (menu) {
@@ -78,11 +83,13 @@ public class Main {
 							input.nextLine();
 
 							System.out.println(
-									"What time do you want to add your event to from? Enter a number from 0-14 (8am(0) - 10pm(14))?");
+									"What time do you want to add your event to from? Enter a number from 0-7 (8am(0) - 10pm(14))?");
 							index2 = input.nextInt();
 							input.nextLine();
 
 							currentStudent.addSubject(index, index2, currentSubject);
+
+							t.getTip();
 
 						} else if (event.equals("GROUP SESSION")) {
 							System.out.println("What is the name of your group session?");
@@ -105,6 +112,8 @@ public class Main {
 							input.nextLine();
 
 							currentStudent.addGroupSession(index, index2, newGroupSession);
+
+							t.getTip();
 
 						} else if (event.equals("EXTRACURRICULAR")) {
 							System.out.println("What is the name of your extracurricular?");
@@ -132,6 +141,8 @@ public class Main {
 
 							currentStudent.addExtracurricular(index, index2, newExtracurricular);
 
+							t.getTip();
+
 						} else {
 							System.out.println("Invalid Input");
 						}
@@ -140,74 +151,142 @@ public class Main {
 					case 3:
 						System.out.println("RESCHEDULE AN EVENT");
 
+						int dayIndex;
+						int eventTime;
+						String rescheduledEvent;
+						String rescheduledEventTimes;
+						String rescheduledEventPurpose;
+
 						System.out.println(
+								"What type of event are you adding? SUBJECT, GROUP SESSION or EXTRACURRICULAR(Type in caps)");
+						rescheduledEvent = input.nextLine();
+
+
+						if (rescheduledEvent.equals("SUBJECT")) {
+							System.out.println(
+								"When do you normally have this event?");
+							rescheduledEventTimes = input.nextLine();
+
+							Subject rescheduledSubject = new Subject(rescheduledEvent,rescheduledEventTimes);
+							System.out.println(
 								"What day would you want to reschedule the event from? Enter a number from 0-7 (Sunday(0) - Saturday(7))?");
-						dayIndex = input.nextInt();
+							dayIndex = input.nextInt();
 
-						System.out.println(
-								"What type of event are you adding? SUBJECT, GROUP SESSION or EXTRACURRICULAR(Type in caps)");
-						String rescheduledEvent = input.nextLine();
-
-						System.out.println(
+							System.out.println(
 								"What time do you want to reschedule your event from? Enter a number from 0-7 (8am(0) - 10pm(14))?");
-						eventTime = input.nextInt();
-						input.nextLine();
+							eventTime = input.nextInt();
+							input.nextLine();
 
-						System.out.println(
-								"What day would you want to reschedule the event to? Enter a number from 0-7 (Sunday(0) - Saturday(7))?");
-						dayIndex = input.nextInt();
+							currentStudent.rescheduleSubject(dayIndex, eventTime, rescheduledSubject);
 
-						System.out.println(
-								"What time do you want to reschedule your event to? Enter a number from 0-7 (8am(0) - 10pm(14))?");
-						eventTime = input.nextInt();
-						input.nextLine();
+						} else if (rescheduledEvent.equals("GROUP SESSION")) {
+							System.out.println(
+								"When do you normally have this event?");
+							rescheduledEventTimes = input.nextLine();
 
-					case 4:
-						System.out.println("CANCEL AN EVENT");
+							System.out.println(
+								"What is the purpose of this event?");
+							rescheduledEventPurpose = input.nextLine();
 
-						System.out.println(
-								"What day would you want to cancel the event from? Enter a number from 0-7 (Sunday(0) - Saturday(7))?");
-						dayIndex = input.nextInt();
+							GroupSession rescheduledGroupSession = new GroupSession(rescheduledEvent,rescheduledEventTimes,rescheduledEventPurpose);
+							System.out.println(
+								"What day would you want to reschedule the event from? Enter a number from 0-7 (Sunday(0) - Saturday(7))?");
+							dayIndex = input.nextInt();
+							
+							System.out.println(
+								"What time do you want to reschedule your event from? Enter a number from 0-7 (8am(0) - 10pm(14))?");
+							eventTime = input.nextInt();
+							input.nextLine();
 
-						System.out.println(
-								"What type of event are you adding? SUBJECT, GROUP SESSION or EXTRACURRICULAR(Type in caps)");
-						cancelEvent = input.nextLine();
+							currentStudent.rescheduleGroupSession(dayIndex, eventTime, rescheduledGroupSession);
 
-						System.out.println(
-								"What time do you want to cancel your event to from? Enter a number from 0-7 (8am(0) - 10pm(14))?");
-						eventTime = input.nextInt();
-						input.nextLine();
+						} else if (rescheduledEvent.equals("EXTRACURRICULAR")) {
+							System.out.println(
+								"When do you normally have this event?");
+							rescheduledEventTimes = input.nextLine();
 
-						if (cancelEvent.equals("SUBJECT")) {
+							System.out.println(
+								"How long would you want to spend at this event the event from?");
+							double timeSpent = input.nextDouble();
 
-							weeklyPlanner.removeSubject(dayIndex, eventTime);
+							Extracurricular rescheduledExtracurricular = new Extracurricular(rescheduledEvent, rescheduledEventTimes, timeSpent);
 
-						} else if (cancelEvent.equals("GROUP SESSION")) {
+							System.out.println(
+								"What day would you want to reschedule the event from? Enter a number from 0-7 (Sunday(0) - Saturday(7))?");
+							dayIndex = input.nextInt();
+							
+							System.out.println(
+								"What time do you want to reschedule your event from? Enter a number from 0-7 (8am(0) - 10pm(14))?");
+							eventTime = input.nextInt();
+							input.nextLine();
 
-							weeklyPlanner.removeGroupSession(dayIndex, eventTime);
 
-						} else if (cancelEvent.equals("EXTRACURRICULAR")) {
-
-							weeklyPlanner.removeExtracurricular(dayIndex, eventTime);
+							currentStudent.rescheduleExtracurricular(dayIndex, eventTime,rescheduledExtracurricular);
 
 						} else {
 							System.out.println("Invalid Input");
 						}
 
 						break;
-						
+
+					case 4:
+						System.out.println("CANCEL AN EVENT");
+
+						System.out.println(
+								"What type of event are you removing? SUBJECT, GROUP SESSION or EXTRACURRICULAR(Type in caps)");
+						String cancelEvent = input.nextLine();
+
+						if (cancelEvent.equals("SUBJECT")) {
+							System.out.println(
+								"What day would you want to cancel the event from? Enter a number from 0-7 (Sunday(0) - Saturday(7))?");
+							dayIndex = input.nextInt();
+
+							System.out.println(
+								"What time do you want to cancel your event to from? Enter a number from 0-7 (8am(0) - 10pm(14))?");
+							eventTime = input.nextInt();
+							input.nextLine();
+
+							currentStudent.removeSubject(dayIndex, eventTime);
+							t.getTip();
+
+						} else if (cancelEvent.equals("GROUP SESSION")) {
+							System.out.println(
+								"What day would you want to cancel the event from? Enter a number from 0-7 (Sunday(0) - Saturday(7))?");
+							dayIndex = input.nextInt();
+
+							System.out.println(
+								"What time do you want to cancel your event to from? Enter a number from 0-7 (8am(0) - 10pm(14))?");
+							eventTime = input.nextInt();
+							input.nextLine();
+
+							currentStudent.removeGroupSession(dayIndex, eventTime);
+							t.getTip();
+
+						} else if (cancelEvent.equals("EXTRACURRICULAR")) {
+							System.out.println(
+								"What day would you want to cancel the event from? Enter a number from 0-7 (Sunday(0) - Saturday(7))?");
+							dayIndex = input.nextInt();
+
+							System.out.println(
+								"What time do you want to cancel your event to from? Enter a number from 0-7 (8am(0) - 10pm(14))?");
+							eventTime = input.nextInt();
+							input.nextLine();
+
+							currentStudent.removeExtracurricular(dayIndex, eventTime);
+							t.getTip();
+
+						} else {
+							System.out.println("Invalid Input");
+						}
+
+						break;
 
 					default:
 						System.out.println("Please select an option that is included in the menu options ");
 						break;
-					}
-					input.close();
 				}
+				input.close();
 			}
-			
-		}
-		catch(IllegalStateException e){
-			System.out.println("Illegal state of scanner");
 		}
 	}
 }
