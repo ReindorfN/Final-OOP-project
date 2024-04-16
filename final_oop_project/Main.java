@@ -9,6 +9,7 @@ public class Main {
 		Student weeklyPlanner = new Student();
 		Student currentStudent = new Student("Maame", "54552026", "MIS", "abc123");
 		Student name = currentStudent;
+		String cancelEvent; int dayIndex; int eventTime;
 
 		if (currentStudent.passwordChecker()) {
 			while (true) {
@@ -136,7 +137,7 @@ public class Main {
 
 						System.out.println(
 								"What day would you want to reschedule the event from? Enter a number from 0-7 (Sunday(0) - Saturday(7))?");
-						int dayIndex = input.nextInt();
+						dayIndex = input.nextInt();
 
 						System.out.println(
 								"What type of event are you adding? SUBJECT, GROUP SESSION or EXTRACURRICULAR(Type in caps)");
@@ -144,16 +145,16 @@ public class Main {
 
 						System.out.println(
 								"What time do you want to reschedule your event from? Enter a number from 0-7 (8am(0) - 10pm(14))?");
-						int eventTime = input.nextInt();
+						eventTime = input.nextInt();
 						input.nextLine();
 
 						System.out.println(
 								"What day would you want to reschedule the event to? Enter a number from 0-7 (Sunday(0) - Saturday(7))?");
-						int dayIndex = input.nextInt();
+						dayIndex = input.nextInt();
 
 						System.out.println(
 								"What time do you want to reschedule your event to? Enter a number from 0-7 (8am(0) - 10pm(14))?");
-						int eventTime = input.nextInt();
+						eventTime = input.nextInt();
 						input.nextLine();
 
 						if (cancelEvent.equals("SUBJECT")) {
@@ -179,15 +180,15 @@ public class Main {
 
 						System.out.println(
 								"What day would you want to cancel the event from? Enter a number from 0-7 (Sunday(0) - Saturday(7))?");
-						int dayIndex = input.nextInt();
+						dayIndex = input.nextInt();
 
 						System.out.println(
 								"What type of event are you adding? SUBJECT, GROUP SESSION or EXTRACURRICULAR(Type in caps)");
-						String cancelEvent = input.nextLine();
+						cancelEvent = input.nextLine();
 
 						System.out.println(
 								"What time do you want to cancel your event to from? Enter a number from 0-7 (8am(0) - 10pm(14))?");
-						int eventTime = input.nextInt();
+						eventTime = input.nextInt();
 						input.nextLine();
 
 						if (cancelEvent.equals("SUBJECT")) {
