@@ -8,13 +8,13 @@ public class Main {
 
 		Student weeklyPlanner = new Student();
 		Student currentStudent = new Student("Maame", "54552026", "MIS", "abc123");
-		Student name = currentStudent;
+		//Student name = currentStudent;
 		String cancelEvent; int dayIndex; int eventTime;
 		Scanner input; input = new Scanner(System.in);
 
 		System.out.println("Enter password: ");
 
-
+		try{
 		if (currentStudent.checkPassword(input.nextLine())) {
 			while (true) {
 				System.out.println("Welcome " + currentStudent.getStudentName() + " to your Planner");
@@ -78,7 +78,7 @@ public class Main {
 							input.nextLine();
 
 							System.out.println(
-									"What time do you want to add your event to from? Enter a number from 0-7 (8am(0) - 10pm(14))?");
+									"What time do you want to add your event to from? Enter a number from 0-14 (8am(0) - 10pm(14))?");
 							index2 = input.nextInt();
 							input.nextLine();
 
@@ -195,13 +195,19 @@ public class Main {
 						}
 
 						break;
+						
 
 					default:
 						System.out.println("Please select an option that is included in the menu options ");
 						break;
+					}
+					input.close();
 				}
-				input.close();
 			}
+			
+		}
+		catch(IllegalStateException e){
+			System.out.println("Illegal state of scanner");
 		}
 	}
 }
