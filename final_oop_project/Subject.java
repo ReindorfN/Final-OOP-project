@@ -15,7 +15,6 @@ public class Subject extends Event {
     public Subject(String subjectName, String times) {
         super(subjectName, times);
     }
-
     public Subject(String subjectName, int modules, double progress, String courseCode, String lecturer,
             String facultyIntern, String location, String times) {
         super(subjectName, times);
@@ -42,7 +41,7 @@ public class Subject extends Event {
      * }
      */
 
-    public int geNumModules() { // getter
+    public int getNumModules() { // getter
         return modules;
     }
 

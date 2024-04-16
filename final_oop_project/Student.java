@@ -28,7 +28,6 @@ public class Student {
         weeklyTimetable = new DailyPlanner[7];
     }
 
-    // updated code to add password which students can use to login to code.
     public boolean checkPassword(String passwordInput) {
         try {
             if (passwordInput.equals(password)) {
