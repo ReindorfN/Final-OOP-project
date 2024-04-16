@@ -6,7 +6,7 @@ public class DailyPlanner{
     public Object[] dailyTimetable;
     //Creating Daily Planner
     public DailyPlanner(){
-        dailyTimetable = new Event[timeSlots.length]; 
+        dailyTimetable = new Object[timeSlots.length]; 
     }
     //class methods
     public void displayTimetable(){
