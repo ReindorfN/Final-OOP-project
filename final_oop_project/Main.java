@@ -5,13 +5,18 @@ import java.util.Scanner;
 //MAIN PROGRAM
 
 public class Main{
-	public static void main(String args[], String studentName){
+	public static void main(String args[]){
+		Scanner input;
 
 		DailyPlanner weeklyPlanner = new DailyPlanner();
-		Student currentStudent= new Student("Maame",54552026,"MIS","abc123",weeklyPlanner);
+		Student currentStudent= new Student("Maame",54552026,"MIS","abc123", weeklyPlanner);
 		Student name = currentStudent;
+		String passwordInput;
+		input = new Scanner(System.in);
+		System.out.print("Enter password: ");
+		passwordInput = input.nextLine();
 
-		if(currentStudent.passwordChecker()){
+		if((currentStudent.checkPassword(passwordInput)) == true){
 			while(true){
 				System.out.println("Welcome"+ name + "to your Planner"); 
  			  	System.out.println("Enter a number to continue");
@@ -20,7 +25,6 @@ public class Main{
    		 		System.out.println("3) Reschedule an event");
     				System.out.println("4) Cancel an event");
 
-    				Scanner input = new Scanner(System.in);
     				int menu = input.nextInt();
       
     				//Switch Loop to run menu selcetion 	
@@ -46,7 +50,7 @@ public class Main{
 		    				System.out.println("Please select an option that is included in this list");
 						break;
       				}	
-					input.close(); 
+				input.close(); 
 			}	
 		}
 	}

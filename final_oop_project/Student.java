@@ -17,16 +17,16 @@ public class Student {
      * @param password represents password of student
      * @param weeklyTimetable[] is an array which has a list of events for the day
      */
-    public Student(String name, int ID, String course, String password){
+    public Student(String name, int ID, String course, String password, DailyPlanner a){
         this.studentName = name;
         this.studentID = ID;
         this.course = course;
         this.password= password;
-        this.weeklyTimetable=weeklyTimetable[];
+        //this.weeklyTimetable=weeklyTimetable[];
     }
         
         //updated code to add password which students can use to login to code.
-	public boolean checkPassword(String password){
+	public boolean checkPassword(String passwordInput){
     		try {
         		if (passwordInput.equals(password)) {
             			return true;
@@ -35,6 +35,7 @@ public class Student {
        			}
     		} catch (NullPointerException e) {
        			 System.out.println("Try Again. Incorrect password");
+                 return false;
     		}
 	}
 
@@ -53,4 +54,10 @@ public class Student {
 
 public String getStudentName(){
 	return studentName;
+}
+
+public String getpassword(){
+	return studentName;
+}
+
 }
