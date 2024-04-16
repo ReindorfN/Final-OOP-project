@@ -4,24 +4,29 @@ import java.util.Scanner;
 
 //MAIN PROGRAM
 public class Main {
-	public static void main(String args[], String studentName) {
+	public static void main(String args[]) {
 
 		Student weeklyPlanner = new Student();
 		Student currentStudent = new Student("Maame", "54552026", "MIS", "abc123");
 		Student name = currentStudent;
 		String cancelEvent; int dayIndex; int eventTime;
+		Scanner input; input = new Scanner(System.in);
 
-		if (currentStudent.passwordChecker()) {
+		System.out.println("Enter password: ");
+
+
+		if (currentStudent.checkPassword(input.nextLine())) {
 			while (true) {
-				System.out.println("Welcome" + name + "to your Planner");
+				System.out.println("Welcome " + currentStudent.getStudentName() + " to your Planner");
 				System.out.println("Enter a number to continue");
 				System.out.println("1) View your planner for the week");
 				System.out.println("2) Add an event");
 				System.out.println("3) Reschedule an event");
 				System.out.println("4) Cancel an event");
 
-				Scanner input = new Scanner(System.in);
+				
 				int menu = input.nextInt();
+				input.nextLine();
 
 				// Switch Loop to run menu selection
 				switch (menu) {
@@ -156,24 +161,6 @@ public class Main {
 								"What time do you want to reschedule your event to? Enter a number from 0-7 (8am(0) - 10pm(14))?");
 						eventTime = input.nextInt();
 						input.nextLine();
-
-						if (cancelEvent.equals("SUBJECT")) {
-
-							weeklyPlanner.removeSubject(dayIndex, eventTime);
-
-						} else if (cancelEvent.equals("GROUP SESSION")) {
-
-							weeklyPlanner.removeGroupSession(dayIndex, eventTime);
-
-						} else if (cancelEvent.equals("EXTRACURRICULAR")) {
-
-							weeklyPlanner.removeExtracurricular(dayIndex, eventTime);
-
-						} else {
-							System.out.println("Invalid Input");
-						}
-
-						break;
 
 					case 4:
 						System.out.println("CANCEL AN EVENT");
