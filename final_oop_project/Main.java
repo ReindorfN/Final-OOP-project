@@ -10,7 +10,7 @@ public class Main {
 
 		//LogIn app1 = new LogIn();
 		//app1.begin();
-		Extracurricular test1 = new Extracurricular("Painting", "5pm", 30);
+		//Extracurricular test1 = new Extracurricular("Painting", "5pm", 30);
 		
 
 		Tips t = new Tips();
@@ -71,12 +71,12 @@ public class Main {
 
 							System.out.println("What is your progress?");
 							double progress = input.nextDouble();
-							//input.nextLine();
+							input.nextLine();
 
 							System.out.println("What is the course code?");
 							String courseCode = input.nextLine();
 
-							System.out.println("What is your lecturer?");
+							System.out.println("Who is your lecturer?");
 							String lecturer = input.nextLine();
 
 							System.out.println("Who is your faculty Intern?");
@@ -85,7 +85,8 @@ public class Main {
 							System.out.println("What is the class location");
 							String location = input.nextLine();
 
-							Subject currentSubject = new Subject(subjectName, modules, progress, courseCode, lecturer,
+							Subject currentSubject;
+							currentSubject = new Subject(subjectName, modules, progress, courseCode, lecturer,
 									facultyIntern, location, times); // Removed assignment
 
 							System.out.println(
@@ -110,7 +111,8 @@ public class Main {
 							System.out.println("What is the purpose of the course");
 							String purpose = input.nextLine();
 
-							GroupSession newGroupSession = new GroupSession(GroupSessionName, time, purpose); // Removed
+							GroupSession newGroupSession;
+							newGroupSession = new GroupSession(GroupSessionName, time, purpose); // Removed
 																												// assignment
 							System.out.println(
 									"What day do you want to add your event to from? Enter a number from 0-7 (Sunday(0) - Saturday(7))?");
@@ -137,7 +139,8 @@ public class Main {
 							double timeSpent = input.nextDouble();
 							input.nextLine();
 
-							Extracurricular newExtracurricular = new Extracurricular(extraCurricular, activityTime,
+							Extracurricular newExtracurricular;
+							newExtracurricular = new Extracurricular(extraCurricular, activityTime,
 									timeSpent); // Removed assignment
 
 							System.out.println(
@@ -182,6 +185,7 @@ public class Main {
 							System.out.println(
 								"What day would you want to reschedule the event from? Enter a number from 0-7 (Sunday(0) - Saturday(7))?");
 							dayIndex = input.nextInt();
+							input.nextLine();
 
 							System.out.println(
 								"What time do you want to reschedule your event from? Enter a number from 0-7 (8am(0) - 10pm(14))?");
@@ -203,6 +207,7 @@ public class Main {
 							System.out.println(
 								"What day would you want to reschedule the event from? Enter a number from 0-7 (Sunday(0) - Saturday(7))?");
 							dayIndex = input.nextInt();
+							input.nextLine();
 							
 							System.out.println(
 								"What time do you want to reschedule your event from? Enter a number from 0-7 (8am(0) - 10pm(14))?");
@@ -219,12 +224,14 @@ public class Main {
 							System.out.println(
 								"How long would you want to spend at this event the event from?");
 							double timeSpent = input.nextDouble();
+							input.nextLine();
 
 							Extracurricular rescheduledExtracurricular = new Extracurricular(rescheduledEvent, rescheduledEventTimes, timeSpent);
 
 							System.out.println(
 								"What day would you want to reschedule the event from? Enter a number from 0-7 (Sunday(0) - Saturday(7))?");
 							dayIndex = input.nextInt();
+							input.nextLine();
 							
 							System.out.println(
 								"What time do you want to reschedule your event from? Enter a number from 0-7 (8am(0) - 10pm(14))?");
@@ -251,6 +258,7 @@ public class Main {
 							System.out.println(
 								"What day would you want to cancel the event from? Enter a number from 0-7 (Sunday(0) - Saturday(7))?");
 							dayIndex = input.nextInt();
+							input.nextLine();
 
 							System.out.println(
 								"What time do you want to cancel your event to from? Enter a number from 0-7 (8am(0) - 10pm(14))?");
@@ -264,6 +272,7 @@ public class Main {
 							System.out.println(
 								"What day would you want to cancel the event from? Enter a number from 0-7 (Sunday(0) - Saturday(7))?");
 							dayIndex = input.nextInt();
+							input.nextLine();
 
 							System.out.println(
 								"What time do you want to cancel your event to from? Enter a number from 0-7 (8am(0) - 10pm(14))?");
@@ -277,6 +286,7 @@ public class Main {
 							System.out.println(
 								"What day would you want to cancel the event from? Enter a number from 0-7 (Sunday(0) - Saturday(7))?");
 							dayIndex = input.nextInt();
+							input.nextLine();
 
 							System.out.println(
 								"What time do you want to cancel your event to from? Enter a number from 0-7 (8am(0) - 10pm(14))?");
