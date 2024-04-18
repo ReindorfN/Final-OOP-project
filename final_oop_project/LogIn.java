@@ -13,7 +13,7 @@ public class LogIn{
     }
 
     public Student begin(){
-        boolean loggedin = false;
+        //boolean loggedin = false;
         Scanner input; String text; BufferedReader br; int userInput;  BufferedWriter bw; String signin; String passw = "";
         Scanner logins; Student student1 = new Student("","","","");
 
@@ -41,7 +41,7 @@ public class LogIn{
 
                 student1 = new Student(name, ID, course, password);
                 System.out.println("You have successfull created an account!!");
-                loggedin = true;
+                //loggedin = true;
 
                 try{bw = new BufferedWriter(new FileWriter(file));
                     bw.write("Name: "+ student1.getStudentName() +"\n");

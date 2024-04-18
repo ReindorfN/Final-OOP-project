@@ -83,13 +83,6 @@ public class Student {
             return false;
         }
     }
-
-    /*
-    public boolean addSubject(String day, String time, Subject subject) {
-
-    
-    */
-
     
 
     public boolean rescheduleSubject(int daySlot, int timeSlot, Subject subject) {
